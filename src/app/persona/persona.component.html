@@ -1,0 +1,110 @@
+<h1 class="header"> PRUEBA para Pack & Pack </h1>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-8">
+            <table class="table table-striped">
+                <thead>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>password</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>hobby</th>
+                    <th>*</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of personas">
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.password}}</td>
+                        <td>{{item.age}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>{{item.hobby}}</td>
+                        <td>
+                            <button (click)="eliminarPersona(item.name)" class="btn btn-primary">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Formulario</h3>
+            <div class="form-group">
+                <label for="controlNombre"></label>
+                <input type="text" [(ngModel)]="agregarPersonaRegistro.name" class="form-control" placeholder="Nombre">
+            </div> 
+             <div class="form-group">
+                <label for="controlEmail"></label>
+                <input type="text" [(ngModel)]="agregarPersonaRegistro.email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="controlPhone"></label>
+                <input type="number" [(ngModel)]="agregarPersonaRegistro.phone" class="form-control" placeholder="Phone">
+            </div>
+            <div class="form-group">
+                <label for="controlPassword"></label>
+                <input type="text" [(ngModel)]="agregarPersonaRegistro.password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="controlAge"></label>
+                <input type="number" [(ngModel)]="agregarPersonaRegistro.age" class="form-control" placeholder="Age">
+            </div>
+            <div class="form-group">
+                <label for="controlGender"></label>
+                <input type="text" [(ngModel)]="agregarPersonaRegistro.gender" class="form-control" placeholder="M or F">
+            </div>
+            <div class="form-group">
+                <label for="controlhobby"></label>
+                <input type="text" [(ngModel)]="agregarPersonaRegistro.hobby" class="form-control" placeholder="hobby">
+            </div> 
+            <button (click)="agregarPersona()" class="btn btn-primary">Add User</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-4">
+            <div>
+                <!-- <label for="controlNombre"></label> -->
+                <span>
+                    <input type="text" name="name" [(ngModel)]="iden_nm" class="form-control" placeholder="Nombre">
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="controlhobby"></label>
+                <input type="text" name="hobby" [(ngModel)]="iden_hob" class="form-control" placeholder="hobby">
+            </div>
+            <div>
+                <button (click)="buscarPersona()" class="btn btn-primary">Search </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <table class="table table-striped">
+                <thead>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>password</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>hobby</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of buscarPersonaRegistro">
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.password}}</td>
+                        <td>{{item.age}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>{{item.hobby}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
+</div>
